@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            /*background-color: rgb(181, 181, 181);*/
+            background: linear-gradient(to right, #b1b1b1, #d7d7d7);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        body {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        nav {
+            background-color: white;      
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        li>a{
+            position: relative;
+            text-decoration: none;
+            float: right;
+            color: #000000;
+            text-decoration: none;
+            padding-right: 20px;
+            font-size: 17px;
+        }
+
+        li>a::after{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left:50%;
+            width: 0%;
+            height: 2px;
+            margin-top: 8px;    
+            background-color: #000000;
+            transition: all 0.5s ease;
+        }
+
+        li>a:hover::after{
+            width: 100%;
+            left:0
+        }  
+
+        #profile {
+            background-color: white;
+            border-radius: 26px;
+            margin: 140px 40px 10px;
+            height: 900px;
+            text-align: center;
+        }
+
+        #knowledge {
+            background-color: rgb(55, 132, 255);
+            border-radius: 26px;
+            margin: 10px 40px 10px;
+            height: 900px;
+            text-align: center;
+        }
+
+        #skills {
+            background-color: rgb(255, 249, 72);
+            border-radius: 26px;
+            margin: 10px 40px 10px;
+            height: 900px;
+            text-align: center;
+        }
+
+        #contact {
+            background-color: white;
+            border-radius: 26px;
+            margin: 10px 40px 10px;
+            height: 900px;
+            text-align: center;
+        }
