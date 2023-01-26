@@ -6,7 +6,6 @@
 
         body {
             font-family: 'Open Sans', sans-serif;
-            /*background-color: rgb(181, 181, 181);*/
             background: linear-gradient(to right, #8b8b8b, #bfbfbf);
             background-position: center;
             background-repeat: no-repeat;
@@ -17,13 +16,6 @@
             display: none;
         }
 
-        body {
-            -ms-overflow-style: none;
-            /* IE and Edge */
-            scrollbar-width: none;
-            /* Firefox */
-        }
-
         nav {
             background-color: white;      
             overflow: hidden;
@@ -31,33 +23,30 @@
             top: 0;
             left: 0;
             width: 100%;
+            height: 80px;
+            font-size: 30px;
+            display: flex;
+        }
+
+        nav>a {
+            padding-left: 20px;
+            padding-bottom: 40px;
+            text-decoration: none;
+            color: #000000;
+        }
+
+        li {
+            list-style-type: none;
         }
 
         li>a{
             position: relative;
-            text-decoration: none;
             float: right;
-            color: #000000;
             text-decoration: none;
+            color: #000000;
             padding-right: 20px;
+            padding-bottom: 50px;
             font-size: 19px;
-        }
-
-        li>a::after{
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left:50%;
-            width: 0%;
-            height: 2px;
-            margin-top: 8px;    
-            background-color: #000000;
-            transition: all 0.5s ease;
-        }
-
-        li>a:hover::after{
-            width: 100%;
-            left:0
         }  
 
         #profile {
