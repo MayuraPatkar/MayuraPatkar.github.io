@@ -20,33 +20,27 @@
             background-color: white;      
             overflow: hidden;
             position: fixed;
+            display: flex;
             top: 0;
             left: 0;
             width: 100%;
             height: 80px;
-            font-size: 30px;
-            display: flex;
         }
 
         nav>a {
-            padding-left: 20px;
-            padding-bottom: 40px;
             text-decoration: none;
             color: #000000;
         }
 
         li {
             list-style-type: none;
+            -ms-flex-item-align: center;
         }
 
         li>a{
-            position: relative;
             float: right;
             text-decoration: none;
             color: #000000;
-            padding-right: 20px;
-            padding-bottom: 50px;
-            font-size: 19px;
         }  
 
         #profile {
