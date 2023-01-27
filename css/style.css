@@ -126,7 +126,7 @@ ul>li {
         height: 250px;
         width: 250px;
         margin-top: 100px;
-        margin-left: 50px;
+        margin-left: 65px;
         margin-bottom: 10px;
         border-radius: 300px;
     }
@@ -144,23 +144,23 @@ ul>li {
         border-radius: 26px;
         margin: 30px 7px 10px;
         height: 300px;
-        width: 290px;
+        width: 330px;
         padding: 20px;
-        font-size: 20px;
+        font-size: 21px;
     }
 
     #knowledge {
         border-radius: 26px;
-        margin: 30px 7px 10px;
+        margin: 30px 7px 15px 10px;
         height: 300px;
-        width: 290px;
+        width: 330px;
         padding: 20px;
-        font-size: 20px;
+        font-size: 21px;
     }
 
     ul>li {
         list-style-type: none;
-        font-size: 20px;
+        font-size: 21px;
         color: rgb(0, 0, 0);
     }
     
@@ -168,17 +168,17 @@ ul>li {
         border-radius: 26px;
         margin: 30px 7px 10px;
         height: 300px;
-        width: 290px;
+        width: 330px;
         padding: 20px;
-        font-size: 20px;
+        font-size: 21px;
     }
     
     #contact {
         border-radius: 26px;
         margin: 30px 7px 10px;
         height: 300px;
-        width: 290px;
+        width: 330px;
         padding: 20px;
-        font-size: 20px;
+        font-size: 21px;
     }
 }
