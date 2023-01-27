@@ -31,42 +31,14 @@ nav>a {
     font-size: 200%;
 }
 
-#profile {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 1%;
-    text-align: center;
-}
-
-#cover {
-    background-color: white;
-    height: 20%;
-    width: 14%;
-    margin-top: 10%;
-    margin-left: 10%;
-    margin-bottom: 2%;
-    border-radius: 60%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-#pro-pho {
-    display: inline-block;
-    background: url("/assets/IMG20221125174721.jpg");
-    background-size: cover;
-    height: 20%;
-    width: 14%;
-    border-radius: 60%;
-}
-
 #intro {
     background-color: white;
-    text-align: center;
     border-radius: 26px;
-    margin: 10% 10% 5%;
+    margin: 10% 10% 10%;
     height: 60%;
-    width: 50%;
     padding: 2%;
     font-size: 150%;
+    text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
