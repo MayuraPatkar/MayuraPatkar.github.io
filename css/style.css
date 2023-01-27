@@ -157,6 +157,12 @@ ul>li {
         padding: 20px;
         font-size: 20px;
     }
+
+    ul>li {
+        list-style-type: none;
+        font-size: 20px;
+        color: rgb(0, 0, 0);
+    }
     
     #skills {
         border-radius: 26px;
