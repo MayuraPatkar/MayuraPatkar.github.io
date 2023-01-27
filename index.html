@@ -4,10 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
     <link rel="icon" type="image/x-icon" href="/assets/Favicon/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mayur</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <!--Navbar-->
@@ -18,7 +27,10 @@
     </nav>
     <!--Profile-->
     <div id="profile">
-        <p>Hello World, My name is Mayur</p>
+        <div class="profile" id="pro-pho"></div>
+        <div class="profile" id="intro">
+            <p>Hello World, My name is Mayur, I am a BCA student at GFGC Thenkanidiyoor. I'm intrested in coding and solving problems.</p>
+        </div>
     </div>
     <!--Knowledge-->
     <div id="knowledge">
