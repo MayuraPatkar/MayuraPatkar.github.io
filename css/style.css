@@ -1,13 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
 
-body {
+* {
     font-family: 'Open Sans', sans-serif;
+    padding: 0%;
+    margin: 0%;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
     background: linear-gradient(to bottom, #2e7eff, #4bff8d);
     background-position: center;
     background-repeat: no-repeat;
 }
 
-nav {
+.menu {
     background-color: rgb(255, 255, 255);
     overflow: hidden;
     position: fixed;
@@ -19,7 +27,7 @@ nav {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-nav>a {
+.menu>a {
     display: flex;
     padding: 1%;
     text-decoration: none;
@@ -29,7 +37,7 @@ nav>a {
 #intro {
     background-color: white;
     border-radius: 26px;
-    margin: 10% 10% 10%;
+    margin: 100px 10% 10%;
     height: 60%;
     padding: 2%;
     font-size: 150%;
