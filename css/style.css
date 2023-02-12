@@ -9,6 +9,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: linear-gradient(to bottom, #2e7eff, #4bff8d);
     background-position: center;
@@ -34,22 +38,11 @@ body {
     color: #000000;
 }
 
-#intro {
+#about {
     background-color: white;
     border-radius: 26px;
-    margin: 100px 10% 10%;
-    height: 60%;
-    padding: 2%;
-    font-size: 150%;
-    text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-#knowledge {
-    background-color: rgb(30, 101, 255);
-    border-radius: 26px;
-    margin: 1% 10% 10%;
-    height: 60%;
+    margin: 100px 10% 6%;
+    height: 40%;
     padding: 2%;
     font-size: 150%;
     text-align: center;
@@ -59,8 +52,8 @@ body {
 #skills {
     background-color: rgb(255, 255, 255);
     border-radius: 26px;
-    margin: 1% 10% 10%;
-    height: 60%;
+    margin: 1% 10% 6%;
+    height: 40%;
     padding: 2%;
     font-size: 150%;
     text-align: center;
