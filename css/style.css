@@ -13,8 +13,12 @@ html {
     scroll-behavior: smooth;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
 body {
-    background: linear-gradient(to bottom, #2e7eff, #4bff8d);
+    background: linear-gradient(to bottom, #9c9c9c, #343434);
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -39,7 +43,7 @@ body {
 }
 
 #about {
-    background-color: white;
+    background-color: rgb(75, 114, 255);
     border-radius: 26px;
     margin: 100px 10% 6%;
     height: 40%;
