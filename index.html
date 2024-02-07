@@ -1,11 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mayur</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+            background-color: rgb(14, 14, 14);
+            transition: background-color 1s ease;
+        }
+
+        body.light-mode {
+            background-color: white;
+            color: black;
+        }
+
+        header {
+            color: inherit;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 1s ease;
+        }
+
+        header h2 {
+            margin: 0;
+        }
+
+        .navigation {
+            display: flex;
+            color: inherit;
+        }
+
+        .navigation div {
+            margin-right: 1rem;
+        }
+
+        .navigation a {
+            color: inherit;
+            text-decoration: none;
+            /* transition: color 1s ease; */
+        }
+
+        .navigation a:hover {
+            color: rgb(95, 0, 191);
+        }
+
+        .intro {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+            color: inherit;
+            padding: 2rem;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            transition: color 1s ease;
+        }
+
+        /* .intro a{
+            height: 50px;
+            width: 50px;
+            background-color: white;
+        }
+
+        .intro a img{
+            height: 50px;
+            width: 50px;
+        } */
+
+        .frame {
+            position: relative;
+            width: 100%;
+            max-width: 30rem;
+            height: auto;
+            border: none;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .frame img {
+            width: 100%;
+            display: block;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .shadow-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: inset 0 -300px 90px -100px rgb(14, 14, 14),
+                inset -100px 0 50px -50px rgb(14, 14, 14),
+                inset 100px 0 50px -50px rgb(14, 14, 14);
+            transition:
+                box-shadow 1s ease,
+                background-color 0.3s ease;
+        }
+
+
+        .shadow-overlay.light-mode {
+            box-shadow: inset 0 -300px 90px -100px white,
+                inset -100px 0 50px -50px white,
+                inset 100px 0 50px -50px white;
+        }
+
+
+        .intro-text {
+            padding-top: 15rem;
+            text-align: center;
+        }
+
+        .icons {
+            height: 25px;
+            width: 25px;
+        }
+
+        .icons img {
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+            border: black;
+            /* border-radius: 20%; */
+            object-fit: cover;
+        }
+
+        @media (max-width: 48rem) {
+            .frame {
+                max-width: 60%;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .toggle-container {
+            top: 10px;
+            right: 10px;
+        }
+
+        .toggle-label {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 20px;
+        }
+
+        .toggle-input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 12px;
+            width: 12px;
+            left: 10px;
+            bottom: 4px;
+            background-color: black;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked+.toggle-slider {
+            background-color: rgb(95, 0, 191);
+        }
+
+        input:focus+.toggle-slider {
+            box-shadow: 0 0 1px rgb(95, 0, 191);
+        }
+
+        input:checked+.toggle-slider:before {
+            transform: translateX(26px);
+        }
+
+        .toggle-input {
+            display: none;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <header>
+        <h2>Mayur</h2>
+        <div class="navigation">
+            <div><a href="#education">Education</a></div>
+            <div><a href="#projects">Projects</a></div>
+            <div><a href="#achievement">Achievements</a></div>
+            <div><a href="#contact">Contact</a></div>
+        </div>
+        <div>
+            <div class="toggle-container">
+                <label class="toggle-label">
+                    <input type="checkbox" class="toggle-input" id="modeToggle">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+    </header>
+    <div class="intro">
+        <div class="frame">
+            <img src="./assets/mayur.png" />
+            <div class="shadow-overlay"></div>
+        </div>
+        <div class="intro-text">
+            <h1 style="color: rgb(95, 0, 191);">Hello, I'm Mayur</h1>
+            <h4>I am currently a bachelor's student at Mangalore University.</h4>
+            <div style="margin: auto; width: 200px; display: flex; justify-content: space-between;">
+                <div class="icons" onclick="github()"><img src="./assets/github.svg" /></div>
+                <div class="icons" onclick="linkedin()"><img src="./assets/linkedin.png"
+                        style=" background-color: white;" /></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const modeToggle = document.getElementById('modeToggle');
+        const shadowOverlay = document.querySelector('.shadow-overlay');
+
+        function toggleMode() {
+            document.body.classList.toggle('light-mode');
+            shadowOverlay.classList.toggle('light-mode');
+        }
+
+        modeToggle.addEventListener('change', toggleMode);
+
+        function github() {
+            window.open("https://github.com/Mayur68", "_blank");
+        }
+
+        function linkedin() {
+            window.open("https://www.linkedin.com/in/mayura-patkar-14306a2b1/", "_blank");
+        }
+
+    </script>
+
 </body>
+
 </html>
