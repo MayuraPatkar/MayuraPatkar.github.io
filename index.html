@@ -13,24 +13,31 @@
         <h2>Mayur</h2>
         <div class="navigation">
             <div><a href="#education">Education</a></div>
+            <div><a href="#skills">Skills</a></div>
             <div><a href="#projects">Projects</a></div>
             <div><a href="#achievement">Achievements</a></div>
             <div><a href="#contact">Contact</a></div>
         </div>
-        <div>
-            <div class="toggle-container">
-                <label class="toggle-label">
-                    <input type="checkbox" class="toggle-input" id="modeToggle">
-                    <span class="toggle-slider"></span>
-                </label>
-            </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
         </div>
+
+        <div class="toggle-container">
+            <label class="toggle-label">
+                <input type="checkbox" class="toggle-input" id="modeToggle">
+                <span class="toggle-slider"></span>
+            </label>
+        </div>
+
     </header>
     <div class="intro">
         <div class="frame">
             <img src="./assets/mayur.png" loading="lazy" />
             <div class="shadow-overlay"></div>
         </div>
+        <!-- <div style="margin: auto; display: flex; justify-content: center; width: 2%;">
+            <img class="icons" src="./assets/down-arrow.png" loading="lazy" />
+        </div> -->
         <div class="intro-text">
             <h1 style="color: rgb(200, 200, 210);">Hello, I'm Mayur</h1>
             <h4>I am currently a bachelor's student at Mangalore University.</h4>
@@ -41,13 +48,17 @@
             </div>
         </div>
     </div>
-    <div style="margin: auto; display: flex; justify-content: center; width: 90%;">
-        <img class="icons" src="./assets/down-arrow.png" loading="lazy" />
-    </div>
 
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links ul');
         const modeToggle = document.getElementById('modeToggle');
         const shadowOverlay = document.querySelector('.shadow-overlay');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
 
         function toggleMode() {
             document.body.classList.toggle('light-mode');

@@ -4,7 +4,7 @@ body {
     padding: 0;
     scroll-behavior: smooth;
     color: white;
-    background-color: rgb(40, 40, 43);
+    background-color: #262626;
     transition: background-color 1s ease;
 }
 
@@ -14,10 +14,11 @@ body::-webkit-scrollbar {
 
 body.light-mode {
     background-color: white;
-    color: black;
+    color: #262626;
 }
 
 header {
+    width: 100%;
     color: inherit;
     padding: 1rem 2rem;
     display: flex;
@@ -48,88 +49,15 @@ header h2 {
     color: rgb(200, 200, 210);
 }
 
-.intro {
-    width: 80%;
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
-    color: inherit;
-    padding-top: 2rem;
-    opacity: 0;
-    animation: fadeIn 2s forwards;
-    transition: color 1s ease;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-.frame {
-    position: relative;
-    width: 100%;
-    max-width: 30rem;
-    height: auto;
-    border: none;
-    overflow: hidden;
-    display: inline-block;
-}
-
-.frame img {
-    width: 100%;
-    display: block;
-    height: auto;
-    object-fit: cover;
-}
-
-.shadow-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    box-shadow: inset 0 -300px 90px -100px rgb(40, 40, 43),
-        inset -100px 0 50px -50px rgb(40, 40, 43),
-        inset 100px 0 50px -50px rgb(40, 40, 43);
-    transition:
-        box-shadow 1s ease,
-        background-color 0.3s ease;
-}
-
-
-.shadow-overlay.light-mode {
-    box-shadow: inset 0 -300px 90px -100px white,
-        inset -100px 0 50px -50px white,
-        inset 100px 0 50px -50px white;
-}
-
-
-.intro-text {
-    padding-top: 15rem;
-    text-align: center;
-}
-
-.icons {
-    height: 35px;
-    width: 35px;
-}
-
-.icons img {
-    height: 100%;
-    width: 100%;
+.menu-toggle {
+    display: none;
     cursor: pointer;
-    border: black;
-    object-fit: cover;
 }
 
 .toggle-container {
-    top: 10px;
-    right: 10px;
+    position: relative;
+    width: 50px;
+    margin-right: 60px;
 }
 
 .toggle-label {
@@ -162,7 +90,7 @@ header h2 {
     content: "";
     height: 12px;
     width: 12px;
-    left: 10px;
+    left: 4px;
     bottom: 4px;
     background-color: inherit;
     transition: .4s;
@@ -186,12 +114,195 @@ input:checked+.toggle-slider:before {
 }
 
 
+.intro {
+    width: 100%;
+    height: 85vh;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    color: inherit;
+    padding-top: 2rem;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    transition: color 1s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.frame {
+    position: relative;
+    width: 100%;
+    max-width: 30rem;
+    height: 85vh;
+    border: none;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.frame img {
+    width: 100%;
+    display: block;
+    height: 85vh;
+    object-fit: cover;
+}
+
+.shadow-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 -300px 90px -100px #262626,
+        inset -100px 0 50px -50px #262626,
+        inset 100px 0 50px -50px #262626;
+    transition:
+        box-shadow 1s ease,
+        background-color 0.3s ease;
+}
+
+
+.shadow-overlay.light-mode {
+    box-shadow: inset 0 -300px 90px -100px white,
+        inset -100px 0 50px -50px white,
+        inset 100px 0 50px -50px white;
+}
+
+
+.intro-text {
+    padding-top: 25vh;
+    text-align: center;
+}
+
+.icons {
+    height: 35px;
+    width: 35px;
+}
+
+.icons img {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    border: black;
+    object-fit: cover;
+}
+
+
+
 
 
 
 
 @media (max-width: 48rem) {
+
+    header {
+        width: 100%;
+        color: inherit;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: color 1s ease;
+    }
+
+    header h2 {
+        margin: 0;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .intro {
+        width: 100%;
+        height: 85vh;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        color: inherit;
+        padding-top: 2rem;
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+        transition: color 1s ease;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
     .frame {
-        max-width: 60%;
+        margin: auto;
+        position: relative;
+        width: 60%;
+        max-width: 30rem;
+        height: 64vh;
+        border: none;
+        overflow: hidden;
+        display: inline-block;
+    }
+
+    .frame img {
+        width: 100%;
+        display: block;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .shadow-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 64vh;
+        box-shadow: inset 0 -300px 90px -100px #262626,
+            inset -100px 0 50px -50px #262626,
+            inset 100px 0 50px -50px #262626;
+        transition:
+            box-shadow 1s ease,
+            background-color 0.3s ease;
+    }
+
+
+    .shadow-overlay.light-mode {
+        box-shadow: inset 0 -300px 90px -100px white,
+            inset -100px 0 50px -50px white,
+            inset 100px 0 50px -50px white;
+    }
+
+
+    .intro-text {
+        padding-top: 0vh;
+        text-align: center;
+    }
+
+    .icons {
+        height: 35px;
+        width: 35px;
+    }
+
+    .icons img {
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+        border: black;
+        object-fit: cover;
     }
 }
