@@ -11,80 +11,247 @@
 </head>
 
 <body>
-    <header class="desktop">
+    <nav class="desktop">
         <h2>Mayur</h2>
         <ul class="navigation">
+            <li><a href="#about">about</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#achievement">Achievements</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="toggle-mode">
             <i class="bi bi-brightness-high-fill" id="toggle-dark"></i>
         </div>
-    </header>
-    <header id="hamburger-nav">
+    </nav>
+    <nav class="hamburger-nav">
         <h2>Mayur</h2>
+        <div class="toggle-mode">
+            <i class="bi bi-brightness-high-fill" id="moblie-toggle-dark"></i>
+        </div>
         <div class="hamburger-menu">
             <div class="hamburger-icon" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
+            <div class="menu-links">
+                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#Education" onclick="toggleMenu()">Education</a></li>
+                <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <div class="intro">
+    <section id="profile">
         <div class="frame">
             <img src="./assets/mayur.png" loading="lazy" alt="Mayur's Profile Picture" />
             <div class="shadow-overlay"></div>
         </div>
-        <div class="intro-text">
-            <div class="menu-links"></div>
-            <h1>Hello, I'm Mayur</h1>
-            <h4>I am currently a bachelor's student at Mangalore University.</h4>
-            <div style="margin: auto; width: 200px; display: flex; justify-content: space-between;">
-                <div class="icons" onclick="github()"><img src="./assets/github.png" /></div>
-                <div class="icons" onclick="linkedin()"><img src="./assets/linkedin.png"
-                        style=" background-color: white;" /></div>
+        <div class="section__text">
+            <p class="section__text__p1">Hello, I'm</p>
+            <h1 class="title">Mayur</h1>
+            <p class="section__text__p2">I am currently a bachelor's student at Mangalore University.</p>
+            <div class="btn-container">
+                <button class="btn btn-color-1" onclick="location.href='./#contact'">
+                    Contact Info
+                </button>
+            </div>
+            <div id="socials-container">
+                <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon"
+                    onclick="location.href='https://www.linkedin.com/in/mayura-patkar-14306a2b1/'" />
+                <img src="./assets/github.png" alt="My Github profile" class="icon"
+                    onclick="location.href='https://github.com/Mayur68'" />
             </div>
         </div>
-    </div>
-    <div class="about-text">
-        <div class="menu-links"></div>
-        <h1>About me</h1>
-        <h4>Hello! I'm Mayur, a passionate and dedicated BCA student with a keen interest
-            in programming and technology.<br> Ever since I wrote my first line of code, I've
-            been fascinated by the endless possibilities that technology offers in solving
-            real-world problems.<br> I thrive on challenges and enjoy delving into complex
-            problems to find innovative solutions. As an aspiring programmer,<br> I constantly
-            seek opportunities to expand my knowledge and skills,<br> whether through personal
-            projects, academic coursework,or collaborative initiatives.<br> Outside of
-            coding, I enjoy exploring the latest tech trends, playing sports, and
-            engaging in creative pursuits.<br> I'm excited about the journey ahead and
-            eager to contribute<br> to the ever-evolving field of technology.</h4>
-    </div>
-    <div class="education"></div>
-    <div class="skills"></div>
-    <div class="projects">
-        <h1>Projects By Me</h1>
-        <div class="project-1">
-            <div class="image"></div>
-            <h2>Bitbliss</h2>
-            <p>A webapp by nodeJS, mongodb.</p>
-            <div class="source-code">source-code</div>
+    </section>
+
+
+    <section id="about">
+        <h1 class="title">#About Me</h1>
+        <div class="section-container">
+            <div class="about-details-container">
+                <div class="text-container">
+                    <p>
+                        Hello! I'm Mayur, a passionate and dedicated BCA student with a keen interest
+                        in programming and technology. Ever since I wrote my first line of code, I've
+                        been fascinated by the endless possibilities that technology offers in solving
+                        real-world problems. I thrive on challenges and enjoy delving into complex
+                        problems to find innovative solutions. As an aspiring programmer, I constantly
+                        seek opportunities to expand my knowledge and skills, whether through personal
+                        projects, academic coursework,or collaborative initiatives. Outside of
+                        coding, I enjoy exploring the latest tech trends, playing sports, and
+                        engaging in creative pursuits. I'm excited about the journey ahead and
+                        eager to contribute to the ever-evolving field of technology.
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="project-2">
-            <div class="image"></div>
-            <div class="source-code"></div>
+    </section>
+
+
+    <section id="skills">
+        <h1 class="title">#Technologies I Know</h1>
+        <div class="experience-details-container">
+            <div class="about-containers">
+                <div class="details-container">
+                    <h2 class="experience-sub-title">Programming Languages</h2>
+                    <div class="article-container">
+                        <article>
+                            <div>
+                                <h3>HTML</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+                        <article>
+                            <div>
+                                <h3>CSS</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+                        <article>
+                            <div>
+                                <h3>SASS</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <div>
+                                <h3>JavaScript</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                        <article>
+                            <div>
+                                <h3>TypeScript</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                        <article>
+                            <div>
+                                <h3>Material UI</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="details-container">
+                    <h2 class="experience-sub-title">Other concepts</h2>
+                    <div class="article-container">
+                        <article>
+                            <div>
+                                <h3>PostgreSQL</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                        <article>
+                            <div>
+                                <h3>Node JS</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <div>
+                                <h3>Express JS</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <div>
+                                <h3>Git</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="project-3">
-            <div class="image"></div>
-            <div class="source-code"></div>
+    </section>
+
+
+    <section id="projects">
+        <h1 class="title"># Current Projects</h1>
+        <div class="experience-details-container">
+            <div class="about-containers">
+                <div class="details-container color-container">
+                    <div class="article-container">
+                        <img src="./assets/bitbliss.jpg" alt="Project 1" class="project-img" />
+                    </div>
+                    <h2 class="experience-sub-title project-title">BitBliss</h2>
+                    <p>A WebApp using NodeJS, MongoDB.</p>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/Mayur68/BitBliss--WebApp-'">
+                            Github
+                        </button>
+                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://bitbliss.onrender.com'">
+                            Live Demo
+                        </button>
+                    </div>
+                </div>
+                <div class="details-container color-container">
+                    <div class="article-container">
+                    </div>
+                    <h2 class="experience-sub-title project-title">Project Two</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
+                            Github
+                        </button>
+                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
+                            Live Demo
+                        </button>
+                    </div>
+                </div>
+                <div class="details-container color-container">
+                    <div class="article-container">
+                    </div>
+                    <h2 class="experience-sub-title project-title">Project Three</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
+                            Github
+                        </button>
+                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
+                            Live Demo
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="contact"></div>
+    </section>
+
+
+    <section id="contact">
+        <h1 class="title">Contact Me</h1>
+        <div class="contact-info-upper-container">
+            <div class="contact-info-container">
+                <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
+                <p><a href="mailto:mayurpatkar68@gmaul.com">mayurpatkar68@gmaul.com</a></p>
+            </div>
+            <div class="contact-info-container">
+                <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
+                <p><a href="https://www.linkedin.com/in/mayura-patkar-14306a2b1/">LinkedIn</a></p>
+            </div>
+            <div class="contact-info-container">
+                <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
+                <p><a href="https://www.linkedin.com/in/mayura-patkar-14306a2b1/">X</a></p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <nav>
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <p>Copyright &#169; 2024 Mayur. All Rights Reserved.</p>
+    </footer>
+
 </body>
 <script src="./script.js"></script>
 
