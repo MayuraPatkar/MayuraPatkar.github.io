@@ -162,7 +162,7 @@ section {
     display: flex;
 }
 
-/* PROFILE SECTION */
+/* PROFILE */
 
 #profile {
     display: flex;
@@ -297,6 +297,10 @@ section {
     position: relative;
 }
 
+#about h1 {
+    padding-top: 3rem;
+}
+
 .about-containers {
     gap: 2rem;
     margin-bottom: 2rem;
@@ -331,18 +335,18 @@ section {
 
 /* skills */
 
-#experience {
+#skills {
     position: relative;
 }
 
-.experience-sub-title {
-    color: rgb(85, 85, 85);
+.skills-sub-title {
+    color: #262626;
     font-weight: 600;
     font-size: 1.75rem;
     margin-bottom: 2rem;
 }
 
-.experience-details-container {
+.skills-details-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -358,6 +362,7 @@ section {
 }
 
 article {
+    color: #262626;
     display: flex;
     width: 10rem;
     justify-content: space-around;
@@ -368,7 +373,7 @@ article .icon {
     cursor: default;
 }
 
-/* PROJECTS*/
+/* PROJECTS */
 
 #projects {
     position: relative;
@@ -432,9 +437,9 @@ article .icon {
     font-size: larger;
 }
 
-.contact-info-container p a{
-text-decoration: none;
-color: inherit;
+.contact-info-container p a {
+    text-decoration: none;
+    color: inherit;
 
 }
 
@@ -446,7 +451,7 @@ color: inherit;
     height: 2.5rem;
 }
 
-/* FOOTER SECTION */
+/* FOOTER */
 
 footer {
     height: 26vh;

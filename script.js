@@ -33,12 +33,3 @@ const shadowOverlay_ = document.querySelector('.shadow-overlay');
 menuToggle_.addEventListener('click', function () {
     toggleClasses(this, shadowOverlay_);
 });
-
-
-// function github() {
-//     window.open("https://github.com/Mayur68", "_blank");
-// }
-
-// function linkedin() {
-//     window.open("https://www.linkedin.com/in/mayura-patkar-14306a2b1/", "_blank");
-// }
