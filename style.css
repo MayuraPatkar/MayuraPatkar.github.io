@@ -25,6 +25,22 @@ body.light-mode {
     color: #262626;
 }
 
+.linkedin-dark-mode.light-mode {
+    content: url('./assets/in1.png');
+}
+
+.github-dark-mode.light-mode {
+    content: url('./assets/github1.png');
+}
+
+.email-dark-mode.light-mode {
+    content: url('./assets/mail.png');
+}
+
+.x-dark-mode.light-mode {
+    content: url('./assets/X1.png');
+}
+
 nav {
     color: inherit;
     display: flex;
@@ -332,7 +348,7 @@ section {
     height: 80%;
 }
 
-.text-container p{
+.text-container p {
     font-size: 1.3rem;
 }
 

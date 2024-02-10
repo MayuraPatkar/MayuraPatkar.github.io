@@ -6,30 +6,32 @@ function toggleMenu() {
 }
 
 // Function to handle toggling classes
-function toggleClasses(toggleElement, overlayElement) {
+function toggleClasses(toggleElement, ...elements) {
     toggleElement.classList.toggle('bi-moon');
-    if (toggleElement.classList.contains('bi-brightness-high-fill')) {
+    const isBrightMode = toggleElement.classList.contains('bi-brightness-high-fill');
+
+    if (isBrightMode) {
+        elements.forEach(element => {
+            element.classList.add('light-mode');
+        });
         document.body.classList.add('light-mode');
-        overlayElement.classList.add('light-mode');
     } else {
+        elements.forEach(element => {
+            element.classList.remove('light-mode');
+        });
         document.body.classList.remove('light-mode');
-        overlayElement.classList.remove('light-mode');
     }
     toggleElement.classList.toggle('bi-brightness-high-fill');
 }
 
-// First event listener
 const menuToggle = document.getElementById('toggle-dark');
 const shadowOverlay = document.querySelector('.shadow-overlay');
+const linkedin = document.querySelector('.linkedin-dark-mode');
+const github = document.querySelector('.github-dark-mode');
+const email = document.querySelector('.email-dark-mode');
+const x = document.querySelector('.x-dark-mode');
 
 menuToggle.addEventListener('click', function () {
-    toggleClasses(this, shadowOverlay);
+    toggleClasses(this, document.body, shadowOverlay, linkedin, github, email, x);
 });
 
-// Second event listener
-const menuToggle_ = document.getElementById('moblie-toggle-dark');
-const shadowOverlay_ = document.querySelector('.shadow-overlay');
-
-menuToggle_.addEventListener('click', function () {
-    toggleClasses(this, shadowOverlay_);
-});
