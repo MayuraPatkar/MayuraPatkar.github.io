@@ -27,11 +27,12 @@ function toggleClasses(toggleElement, ...elements) {
 const menuToggle = document.getElementById('toggle-dark');
 const shadowOverlay = document.querySelector('.shadow-overlay');
 const linkedin = document.querySelector('.linkedin-dark-mode');
+const linkedin2 = document.querySelector('.linkedin2-dark-mode');
 const github = document.querySelector('.github-dark-mode');
 const email = document.querySelector('.email-dark-mode');
 const x = document.querySelector('.x-dark-mode');
 
 menuToggle.addEventListener('click', function () {
-    toggleClasses(this, document.body, shadowOverlay, linkedin, github, email, x);
+    toggleClasses(this, document.body, shadowOverlay, linkedin,linkedin2, github, email, x);
 });
 

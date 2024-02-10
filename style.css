@@ -29,6 +29,10 @@ body.light-mode {
     content: url('./assets/in1.png');
 }
 
+.linkedin2-dark-mode.light-mode {
+    content: url('./assets/in1.png');
+}
+
 .github-dark-mode.light-mode {
     content: url('./assets/github1.png');
 }
