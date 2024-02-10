@@ -332,6 +332,9 @@ section {
     height: 80%;
 }
 
+.text-container p{
+    font-size: 1.3rem;
+}
 
 /* skills */
 
