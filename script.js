@@ -19,15 +19,15 @@ function toggleClasses(toggleElement, ...elements) {
 }
 
 const menuToggle = document.getElementById('toggle-dark');
-const menuToggleMobile = document.getElementById('mobile-toggle-dark');
 
 const elementsToToggle = [
     document.body,
     document.querySelector('.shadow-overlay'),
-    document.querySelector('.line'),
+    // document.querySelector('.line'),
+    document.querySelector('.resume'),
     document.querySelector('.linkedin-dark-mode'),
     document.querySelector('.linkedin2-dark-mode'),
-    document.querySelector('.github-dark-mode'),
+    // document.querySelector('.github-dark-mode'),
     document.querySelector('.email-dark-mode'),
     document.querySelector('.x-dark-mode')
 ];
@@ -36,6 +36,7 @@ menuToggle.addEventListener('click', function () {
     toggleClasses(this, ...elementsToToggle);
 });
 
+// const menuToggleMobile = document.getElementById('mobile-toggle-dark');
 // menuToggleMobile.addEventListener('click', function () {
 //     toggleClasses(this, ...elementsToToggle);
 // });

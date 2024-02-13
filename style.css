@@ -109,6 +109,12 @@ nav h2 {
     cursor: pointer;
     background-color: white;
     color: #262626;
+    transition: 1s ease;
+}
+
+.resume.light-mode{
+    background-color: #262626;
+    color: white;
 }
 
 .toggle-mode i {
@@ -289,6 +295,7 @@ section {
 .section__text {
     align-self: center;
     text-align: center;
+    transition: 1s ease;
 }
 
 .section__text p {
@@ -321,6 +328,7 @@ section {
 .icon {
     cursor: pointer;
     height: 2rem;
+    transition: 1s ease;
 }
 
 /* BUTTONS */
