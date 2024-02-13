@@ -10,32 +10,36 @@ function toggleClasses(toggleElement, ...elements) {
     toggleElement.classList.toggle('bi-moon');
     const isBrightMode = toggleElement.classList.contains('bi-brightness-high-fill');
 
-    if (isBrightMode) {
-        elements.forEach(element => {
-            element.classList.add('light-mode');
-        });
-        document.body.classList.add('light-mode');
-    } else {
-        elements.forEach(element => {
-            element.classList.remove('light-mode');
-        });
-        document.body.classList.remove('light-mode');
-    }
-    toggleElement.classList.toggle('bi-brightness-high-fill');
+    elements.forEach(element => {
+        element.classList.toggle('light-mode', isBrightMode);
+    });
+
+    document.body.classList.toggle('light-mode', isBrightMode);
+    toggleElement.classList.toggle('bi-brightness-high-fill', !isBrightMode);
 }
 
 const menuToggle = document.getElementById('toggle-dark');
-const shadowOverlay = document.querySelector('.shadow-overlay');
-const linkedin = document.querySelector('.linkedin-dark-mode');
-const line = document.querySelector('.line');
-const linkedin2 = document.querySelector('.linkedin2-dark-mode');
-const github = document.querySelector('.github-dark-mode');
-const email = document.querySelector('.email-dark-mode');
-const x = document.querySelector('.x-dark-mode');
+const menuToggleMobile = document.getElementById('mobile-toggle-dark');
+
+const elementsToToggle = [
+    document.body,
+    document.querySelector('.shadow-overlay'),
+    document.querySelector('.line'),
+    document.querySelector('.linkedin-dark-mode'),
+    document.querySelector('.linkedin2-dark-mode'),
+    document.querySelector('.github-dark-mode'),
+    document.querySelector('.email-dark-mode'),
+    document.querySelector('.x-dark-mode')
+];
 
 menuToggle.addEventListener('click', function () {
-    toggleClasses(this, document.body, shadowOverlay, line, linkedin, linkedin2, github, email, x);
+    toggleClasses(this, ...elementsToToggle);
 });
+
+// menuToggleMobile.addEventListener('click', function () {
+//     toggleClasses(this, ...elementsToToggle);
+// });
+
 
 
 function go_up() {

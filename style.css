@@ -465,6 +465,10 @@ article .icon {
 .color-container {
     border-color: rgb(163, 163, 163);
     background: rgb(250, 250, 250);
+    color: #262626;
+}
+.color-container p {
+    padding-bottom: 10px;
 }
 
 .project-img {
