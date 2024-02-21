@@ -49,15 +49,15 @@
   }
 
   .shadow-overlay {
-    box-shadow: inset 0 -200px 90px -100px #262626,
-      inset -100px 0 50px -50px #262626,
-      inset 100px 0 50px -50px #262626;
-  }
-
-  .shadow-overlay.light-mode {
     box-shadow: inset 0 -200px 90px -100px white,
       inset -100px 0 50px -50px white,
       inset 100px 0 50px -50px white;
+  }
+
+  .shadow-overlay.light-mode {
+    box-shadow: inset 0 -200px 90px -100px #262626,
+      inset -100px 0 50px -50px #262626,
+      inset 100px 0 50px -50px #262626;
   }
 
   .about-containers {

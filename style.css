@@ -7,8 +7,8 @@
 
 body {
     font-family: "Poppins", sans-serif;
-    color: #d9d9d9;
-    background-color: #262626;
+    color: #262626;
+    background-color: white;
     transition: background-color 1s ease;
 }
 
@@ -21,16 +21,16 @@ body::-webkit-scrollbar {
 }
 
 body.light-mode {
-    background-color: white;
-    color: #262626;
+    background-color: #262626;
+    color: #d9d9d9;
 }
 
 .linkedin-dark-mode.light-mode {
-    content: url('./assets/in1.png');
+    content: url('./assets/in.png');
 }
 
 .linkedin2-dark-mode.light-mode {
-    content: url('./assets/in1.png');
+    content: url('./assets/in.png');
 }
 
 .github-dark-mode.light-mode {
@@ -42,7 +42,7 @@ body.light-mode {
 }
 
 .x-dark-mode.light-mode {
-    content: url('./assets/X1.png');
+    content: url('./assets/X.png');
 }
 
 nav {
@@ -107,14 +107,14 @@ nav h2 {
     border-radius: 2px;
     height: 28px;
     cursor: pointer;
-    background-color: white;
-    color: #262626;
+    background-color: #262626;
+    color: white;
     transition: 1s ease;
 }
 
-.resume.light-mode{
-    background-color: #262626;
-    color: white;
+.resume.light-mode {
+    background-color: white;
+    color: #262626;
 }
 
 .toggle-mode i {
@@ -278,18 +278,18 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    box-shadow: inset 0 -300px 90px -100px #262626,
-        inset -100px 0 50px -50px #262626,
-        inset 100px 0 50px -50px #262626;
+    box-shadow: inset 0 -300px 90px -100px white,
+        inset -100px 0 50px -50px white,
+        inset 100px 0 50px -50px white;
     transition:
         box-shadow 1s ease,
         background-color 0.3s ease;
 }
 
 .shadow-overlay.light-mode {
-    box-shadow: inset 0 -300px 90px -100px white,
-        inset -100px 0 50px -50px white,
-        inset 100px 0 50px -50px white;
+    box-shadow: inset 0 -300px 90px -100px #262626,
+        inset -100px 0 50px -50px #262626,
+        inset 100px 0 50px -50px #262626;
 }
 
 .section__text {
@@ -349,7 +349,7 @@ section {
 
 .btn-color-1,
 .btn-color-2 {
-    border: rgb(53, 53, 53) 0.1rem solid;
+    border: rgb(74, 74, 74) 0.1rem solid;
 }
 
 .btn-color-1:hover,
@@ -475,6 +475,7 @@ article .icon {
     background: rgb(250, 250, 250);
     color: #262626;
 }
+
 .color-container p {
     padding-bottom: 10px;
 }
@@ -564,12 +565,24 @@ footer {
 .nav-links a {
     color: inherit;
     text-decoration: none;
+    position: relative;
 }
 
-.nav-links a:hover {
-    text-decoration: underline;
-    text-underline-offset: 1rem;
-    transition: white 1s ease;
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 1s ease, left 1s ease;
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 50%;
 }
 
 footer p {
