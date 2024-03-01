@@ -410,8 +410,8 @@ section {
     flex: 1;
     background: white;
     border-radius: 2rem;
-    border: rgb(38, 38, 38) 0.1rem solid;
-    border-color: rgb(163, 163, 163);
+    /* border: rgb(38, 38, 38) 0.1rem solid; */
+    background: rgb(224, 224, 224);
     text-align: center;
 }
 
@@ -471,8 +471,7 @@ article .icon {
 }
 
 .color-container {
-    border-color: rgb(163, 163, 163);
-    background: rgb(250, 250, 250);
+    background: rgb(224, 224, 224);
     color: #262626;
 }
 
