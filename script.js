@@ -1,67 +1,66 @@
 function toggleMenu() {
     const menu = document.querySelector(".menu-links");
     const icon = document.querySelector(".hamburger-icon");
-    menu.classList.toggle("open");
-    icon.classList.toggle("open");
+    menu?.classList.toggle("open");
+    icon?.classList.toggle("open");
 }
 
-const elementsToToggle = [
-    document.body,
-    document.querySelector('.shadow-overlay'),
-    document.querySelector('.resume'),
-    document.querySelector('.linkedin-dark-mode'),
-    document.querySelector('.linkedin2-dark-mode'),
-    document.querySelector('.email-dark-mode'),
-    document.querySelector('.x-dark-mode')
-];
+document.addEventListener("DOMContentLoaded", () => {
+    
+    const elementsToToggle = [
+        document.body,
+        document.querySelector('.shadow-overlay'),
+        document.querySelector('.resume'),
+        document.querySelector('.linkedin-dark-mode'),
+        document.querySelector('.linkedin2-dark-mode'),
+        document.querySelector('.email-dark-mode'),
+        document.querySelector('.x-dark-mode')
+    ].filter(Boolean);
 
-function screenSizeHandler(matches) {
-    if (matches) {
-        const menuToggleMobile = document.getElementById('mobile-toggle-dark');
-        menuToggleMobile.addEventListener('click', function () {
-            toggleClasses(this, ...elementsToToggle);
+    function toggleClasses(toggleElement, ...elements) {
+        const isCurrentlyBright = toggleElement.classList.contains('bi-brightness-high-fill');
+        toggleElement.classList.toggle('bi-brightness-high-fill', !isCurrentlyBright);
+        toggleElement.classList.toggle('bi-moon', isCurrentlyBright);
+
+        elements.forEach(element => {
+            element.classList.toggle('light-mode', isCurrentlyBright);
         });
     }
-}
 
-const mediaQuery = window.matchMedia('(max-width: 1200px)');
-screenSizeHandler(mediaQuery.matches);
-mediaQuery.addListener(screenSizeHandler);
+    function setupToggleListeners() {
+        const desktopToggle = document.getElementById('toggle-dark');
+        const mobileToggle = document.getElementById('moblie-toggle-dark');
 
-function toggleClasses(toggleElement, ...elements) {
-    toggleElement.classList.toggle('bi-moon');
-    const isBrightMode = toggleElement.classList.contains('bi-brightness-high-fill');
+        if (desktopToggle) {
+            desktopToggle.addEventListener('click', function () {
+                toggleClasses(this, ...elementsToToggle);
+            });
+        } else {
+            console.log("Desktop toggle NOT found.");
+        }
 
-    elements.forEach(element => {
-        element.classList.toggle('light-mode', isBrightMode);
-    });
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', function () {
+                toggleClasses(this, ...elementsToToggle);
+            });
+        }
+    }
 
-    document.body.classList.toggle('light-mode', isBrightMode);
-    toggleElement.classList.toggle('bi-brightness-high-fill', !isBrightMode);
-}
+    setupToggleListeners();
 
-const menuToggle = document.getElementById('toggle-dark');
+    // Scroll button toggle
+    function toggleGoUpButton() {
+        const goUpButton = document.querySelector(".go-up");
+        if (!goUpButton) return;
 
-menuToggle.addEventListener('click', function () {
-    toggleClasses(this, ...elementsToToggle);
+        goUpButton.classList.toggle("visible", window.scrollY > 0);
+    }
+
+    window.addEventListener("scroll", toggleGoUpButton);
+    toggleGoUpButton();
 });
 
+
 function go_up() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
-function toggleGoUpButton() {
-    var goUpButton = document.querySelector(".go-up");
-    if (window.scrollY > 0) {
-        goUpButton.classList.add("visible");
-    } else {
-        goUpButton.classList.remove("visible");
-    }
-}
-
-window.addEventListener("scroll", toggleGoUpButton);
-
-toggleGoUpButton();

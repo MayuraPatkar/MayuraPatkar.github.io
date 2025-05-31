@@ -1,0 +1,154 @@
+@media screen and (max-width: 1400px) {
+    #profile {
+      height: 83vh;
+      margin-bottom: 6rem;
+    }
+  
+    .about-containers {
+      flex-wrap: wrap;
+    }
+  
+    #contact,
+    #projects {
+      height: fit-content;
+    }
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .desktop {
+      display: none;
+    }
+  
+    .hamburger-nav {
+      display: flex;
+    }
+  
+    #profile {
+      text-align: center;
+    }
+  
+    #profile,
+    .section-container {
+      display: block;
+    }
+  
+    section,
+    .section-container {
+      height: fit-content;
+    }
+  
+    section {
+      margin: 0 5%;
+    }
+  
+    .frame {
+      width: 275px;
+      height: 275px;
+      display: inline-block;
+      margin: 0 auto 2rem;
+    }
+  
+    .shadow-overlay {
+      box-shadow: inset 0 -165px 90px -100px white,
+        inset -100px 0 50px -50px white,
+        inset 100px 0 50px -50px white;
+    }
+  
+    .shadow-overlay.light-mode {
+      box-shadow: inset 0 -200px 90px -100px #262626,
+        inset -100px 0 50px -50px #262626,
+        inset 100px 0 50px -50px #262626;
+    }
+  
+    .about-containers {
+      margin-top: 0;
+    }
+  }
+  
+  
+  
+  @media screen and (max-width: 600px) {
+
+    .menu-links {
+        margin-top: 10px;
+        width: 40vw;
+        background-color: rgb(255, 255, 255);
+        border-radius: 20px;
+        border: 1px solid gray;
+    }
+
+    .menu-links li a{
+    font-size: 1.1rem;
+    }
+  
+    #contact,
+    footer {
+      height: 40vh;
+    }
+  
+    #profile {
+      height: 83vh;
+      margin-bottom: 0;
+    }
+  
+    article {
+      font-size: 1rem;
+    }
+  
+    footer nav {
+      height: fit-content;
+      margin-bottom: 2rem;
+    }
+
+    section {
+            /* height: calc(var(--vh, 1vh) * 100); */
+    }
+
+    #about p{
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+  
+    .about-containers,
+    .contact-info-upper-container,
+    .btn-container {
+      flex-wrap: wrap;
+    }
+  
+    .contact-info-container {
+      margin: 0;
+    }
+  
+    .contact-info-container p,
+    .nav-links li a {
+      font-size: 1rem;
+    }
+  
+    .experience-sub-title {
+      font-size: 1.25rem;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+    }
+  
+    .section__pic-container {
+      width: auto;
+      height: 46vw;
+      justify-content: center;
+    }
+  
+    .section__text__p2 {
+      font-size: 1.25rem;
+    }
+  
+    .title {
+      font-size: 2rem;
+    }
+  
+    .text-container {
+      text-align: justify;
+    }
+  }
