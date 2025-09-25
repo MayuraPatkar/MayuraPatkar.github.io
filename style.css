@@ -493,7 +493,6 @@ section {
     position: relative;
 }
 
-/* Fix: Use a dedicated container for projects */
 .projects-containers {
     width: 100%;
     min-height: 60vh;
@@ -509,7 +508,6 @@ section {
     flex: 1 1 420px;
     max-width: 450px;
     height: 600px;
-    /* Fixed height */
     background: rgb(224, 224, 224);
     color: #262626;
     margin-bottom: 2rem;
@@ -520,7 +518,6 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    /* Evenly space content vertically */
 }
 
 .color-container p {
