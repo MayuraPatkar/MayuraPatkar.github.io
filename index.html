@@ -1,235 +1,409 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mayura Patkar - AI Researcher & Deep Learning Engineer">
+    <title>SYSTEM :: MAYURA_PATKAR</title>
     <link rel="icon" href="./assets/mayura patkar.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./responsive.css">
-    <title>Mayura Patkar</title>
 </head>
-
 <body>
-    <nav class="desktop">
-        <h2>Mayura Patkar</h2>
-        <ul class="navigation">
-            <li><a href="#about">about</a></li>
-            <!-- <li><a href="#education">Education</a></li> -->
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <div class="resume" onclick="window.open('./static/Mayura Patkar.pdf', '_blank')">Resume</div>
-        </ul>
-        <div class="toggle-mode">
-            <i class="bi bi-brightness-high-fill" id="toggle-dark"></i>
-        </div>
-    </nav>
-    <nav class="hamburger-nav">
-        <h2>Mayura</h2>
-        <div class="toggle-mode">
-            <i class="bi bi-brightness-high-fill" id="moblie-toggle-dark"></i>
-        </div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="menu-links">
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <!-- <li><a href="#Education" onclick="toggleMenu()">Education</a></li> -->
-                <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+
+    <!-- Boot Sequence Overlay -->
+    <div id="boot-screen">
+        <div class="boot-content">
+            <div class="boot-text">INITIALIZING NEURAL INTERFACE...</div>
+            <div class="progress-bar"><div class="progress-fill"></div></div>
+            <div class="sys-log">
+                <p>> LOADING KERNEL MODULES...</p>
+                <p>> MOUNTING FILE SYSTEM...</p>
+                <p>> CONNECTING TO NEURAL NET...</p>
+                <p>> ACCESS GRANTED.</p>
             </div>
         </div>
-    </nav>
-    <section id="profile">
-        <div class="frame">
-            <img src="./assets/mayura patkar.png" loading="lazy" alt="Mayura Patkar's Profile Picture" />
-            <div class="shadow-overlay"></div>
-        </div>
-        <div class="section__text">
-            <p class="section__text__p1">Hello, I'm</p>
-            <h1 class="title">Mayura Patkar</h1>
-            <p class="section__text__p2">AI Researcher | Deep Learning Engineer | Specializing in Transformers & GNNs</p>
-            <div class="btn-container">
-            </div>
-            <div id="socials-container">
-                <img src="./assets/in1.png" alt="My LinkedIn profile" class="icon linkedin-dark-mode"
-                    onclick="location.href='https://www.linkedin.com/in/mayura-patkar-14306a2b1/'" />
-                <img src="./assets/github.png" alt="My Github profile" class="icon github-dark-mode"
-                    onclick="location.href='https://github.com/MayuraPatkar'" />
-            </div>
-        </div>
-    </section>
-    <div class="go-up" onclick="go_up()"><img src="./assets/angle-up-solid.svg" /></div>
-    <section id="about">
-        <h1 class="title">#About Me</h1>
-        <div class="section-container">
-            <div class="about-details-container">
-                <div class="text-container">
-                    <p>
-                        <strong>Hi, I'm Mayura Patkar, an MCA student at MIT Manipal, passionate about AI research and deep
-                            learning.</strong>
-                        <br>
-                        My interests lie in building transformer models, graph neural networks, and exploring
-                        cutting-edge AI techniques. I enjoy working on complex problems, from training language models
-                        to analyzing research trends with advanced machine learning methods. My goal is to push the
-                        boundaries of AI and contribute to its growing impact.
-                        <br>
-                        Excited about research, innovation, and the future of AI!
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- <sectio
-      -->
-    <!-- <div class="line"></div> -->
-    <section id="skills">
-        <h1 class="title">#Skills & Expertise</h1>
-        <div class="skills-grid">
+    </div>
 
-            <div class="skill-card ai">
-                <i class="fas fa-brain skill-icon"></i>
-                <h3>Core AI/ML</h3>
-                <p>Transformers, GNNs, LLMs, Community Detection, Concept Drift</p>
+    <!-- Background Canvas -->
+    <canvas id="neural-bg"></canvas>
+
+    <!-- Scanline Overlay -->
+    <div class="scanlines"></div>
+
+    <!-- Main Interface -->
+    <div id="interface">
+        
+        <!-- Top HUD -->
+        <header class="hud-header">
+            <div class="hud-left">
+                <span class="sys-id">SYS.ID: MP-2024-AI</span>
+                <span class="connection-status"><span class="blink">●</span> ONLINE</span>
             </div>
-
-            <div class="skill-card dl">
-                <i class="fas fa-robot skill-icon"></i>
-                <h3>Deep Learning Frameworks</h3>
-                <p>PyTorch, Hugging Face, TensorFlow (basic)</p>
+            <div class="hud-center">
+                <h1>MAYURA PATKAR</h1>
             </div>
-
-            <div class="skill-card prog">
-                <i class="fab fa-python skill-icon"></i>
-                <h3>Programming</h3>
-                <p>Python, JavaScript, Shell scripting, C (basics)</p>
+            <div class="hud-right">
+                <span id="sys-time">00:00:00</span>
+                <span class="loc">LOC: MANIPAL, IN</span>
             </div>
+        </header>
 
-            <div class="skill-card data">
-                <i class="fas fa-database skill-icon"></i>
-                <h3>Data Science</h3>
-                <p>Data preprocessing, Feature engineering, Visualization, Statistical Analysis</p>
-            </div>
-
-            <div class="skill-card db">
-                <i class="fas fa-server skill-icon"></i>
-                <h3>Databases</h3>
-                <p>MongoDB, SQL, Graph Databases (Neo4j basics)</p>
-            </div>
-
-            <div class="skill-card tools">
-                <i class="fas fa-tools skill-icon"></i>
-                <h3>Tools & Workflow</h3>
-                <p>Git/GitHub, Linux, Docker (basic), VS Code, Jupyter</p>
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- <div class="line"></div> -->
-    <section id="projects">
-        <h1 class="title">#Major Projects</h1>
-        <div class="experience-details-container">
-            <div class="projects-containers">
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./assets/NLmodel.jpg" alt="Project 2" class="project-img" />
+        <div class="main-grid">
+            <!-- Sidebar Navigation -->
+            <aside class="sidebar">
+                <div class="nav-header">MODULES</div>
+                <nav class="nav-menu">
+                    <button class="nav-btn active" data-target="home">
+                        <i class="fas fa-terminal"></i> <span>/HOME</span>
+                    </button>
+                    <button class="nav-btn" data-target="about">
+                        <i class="fas fa-user-astronaut"></i> <span>/BIO_DATA</span>
+                    </button>
+                    <button class="nav-btn" data-target="work">
+                        <i class="fas fa-project-diagram"></i> <span>/PROJECTS</span>
+                    </button>
+                    <button class="nav-btn" data-target="skills">
+                        <i class="fas fa-microchip"></i> <span>/SKILLS</span>
+                    </button>
+                    <button class="nav-btn" data-target="experience">
+                        <i class="fas fa-history"></i> <span>/LOGS</span>
+                    </button>
+                    <button class="nav-btn" data-target="certs">
+                        <i class="fas fa-certificate"></i> <span>/MODULES</span>
+                    </button>
+                    <button class="nav-btn" data-target="contact">
+                        <i class="fas fa-satellite-dish"></i> <span>/COMMS</span>
+                    </button>
+                </nav>
+                
+                <div class="sys-stats">
+                    <div class="stat-row">
+                        <span>CPU</span>
+                        <div class="stat-bar"><div class="fill" style="width: 45%"></div></div>
                     </div>
-                    <h2 class="experience-sub-title project-title">TCLM-2 language Model</h2>
-                    <p>Text-Generation model (transformer based)</p>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn"
-                            onclick="location.href='https://huggingface.co/Mayura01/T-CLM2'">
-                            HuggingFace
-                        </button>
-                        <button class="btn btn-color-2 project-btn"
-                            onclick="location.href='https://github.com/MayuraPatkar/TCLM2.git'">
-                            GitHub
-                        </button>
+                    <div class="stat-row">
+                        <span>MEM</span>
+                        <div class="stat-bar"><div class="fill" style="width: 72%"></div></div>
+                    </div>
+                    <div class="stat-row">
+                        <span>NET</span>
+                        <div class="stat-bar"><div class="fill" style="width: 90%"></div></div>
                     </div>
                 </div>
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./assets/image0.jpg" alt="Project 1" class="project-img" />
-                    </div>
-                    <h2 class="experience-sub-title project-title">Omniera</h2>
-                    <p>A fine-tunned Conversational AI (using TCLM-2 base model).</p>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn"
-                            onclick="location.href='https://github.com/MayuraPatkar/Omniera'">
-                            Github
-                        </button>
-                    </div>
-                </div>
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./assets/SSMS_logo.png" alt="Project 1" class="project-img" />
-                    </div>
-                    <h2 class="experience-sub-title project-title">Shresht Systems</h2>
-                    <p>A Website for Shresht Systems.</p>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn"
-                            onclick="location.href='https://shreshtsystems.com'">
-                            Shreshth Systems
-                        </button>
-                    </div>
-                </div>
+            </aside>
 
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./assets/SSMS_logo2.png" alt="Project 1" class="project-img" />
+            <!-- Content Area -->
+            <main class="content-area">
+                
+                <!-- HOME SECTION -->
+                <section id="home" class="section active">
+                    <div class="hero-container">
+                        <div class="glitch-wrapper">
+                            <h2 class="glitch" data-text="AI RESEARCHER">AI RESEARCHER</h2>
+                            <h2 class="glitch sub" data-text="& ML ENGINEER">& ML ENGINEER</h2>
+                        </div>
+                        <div class="terminal-window">
+                            <div class="term-header">
+                                <span class="term-btn red"></span>
+                                <span class="term-btn yellow"></span>
+                                <span class="term-btn green"></span>
+                                <span class="term-title">user@mayura:~/research</span>
+                            </div>
+                            <div class="term-body">
+                                <p><span class="prompt">user@mayura:~$</span> whoami</p>
+                                <p class="output">
+                                    Name: Mayura Patkar<br>
+                                    Role: Deep Learning Engineer<br>
+                                    Focus: Transformers, GNNs, LLMs<br>
+                                    Status: Open to Collaboration
+                                </p>
+                                <p><span class="prompt">user@mayura:~$</span> python train_model.py --epochs=100</p>
+                                <p class="output">
+                                    Training... [====================] 100%<br>
+                                    Loss: 0.0023 | Accuracy: 99.8%<br>
+                                    Model saved successfully.
+                                </p>
+                                <p><span class="prompt">user@mayura:~$</span> <span class="cursor">_</span></p>
+                            </div>
+                        </div>
+                        <div class="cta-group">
+                            <a href="#work" class="cyber-btn">INITIALIZE_PROJECTS</a>
+                            <a href="./static/Mayura Patkar.pdf" target="_blank" class="cyber-btn outline">DOWNLOAD_RESUME</a>
+                        </div>
                     </div>
-                    <h2 class="experience-sub-title project-title">Shresht Systems Management System</h2>
-                    <p>Company Management Software (Team Project)</p>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn"
-                            onclick="location.href='https://github.com/MayuraPatkar/Shresht-Systems_Management-System.git'">
-                            Github
-                        </button>
-                    </div>
-                </div>
+                </section>
 
-            </div>
+                <!-- ABOUT SECTION -->
+                <section id="about" class="section">
+                    <div class="panel">
+                        <div class="panel-header">
+                            <h3>// BIO_DATA</h3>
+                            <div class="dec-line"></div>
+                        </div>
+                        <div class="panel-body split-layout">
+                            <div class="bio-image">
+                                <div class="img-frame">
+                                    <img src="./assets/mayura patkar.png" alt="Mayura Patkar">
+                                    <div class="scan-line"></div>
+                                </div>
+                                <div class="bio-stats">
+                                    <div class="stat-box">
+                                        <span class="val">MCA</span>
+                                        <span class="lbl">MIT MANIPAL</span>
+                                    </div>
+                                    <div class="stat-box">
+                                        <span class="val">3+</span>
+                                        <span class="lbl">YRS EXP</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bio-text">
+                                <p class="typing-text">
+                                    > SYSTEM ANALYSIS:<br><br>
+                                    I am a researcher exploring the frontiers of Artificial Intelligence. My core processing power is dedicated to understanding and improving Transformer architectures and Graph Neural Networks.
+                                </p>
+                                <p>
+                                    Currently executing advanced learning algorithms at MIT Manipal. I build systems that can learn, adapt, and generate. From training Language Models from scratch to optimizing neural pathways, I am obsessed with the "Intelligence" in AI.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- WORK SECTION -->
+                <section id="work" class="section">
+                    <div class="panel">
+                        <div class="panel-header">
+                            <h3>// PROJECT_DATABASE</h3>
+                            <div class="dec-line"></div>
+                        </div>
+                        <div class="projects-grid">
+                            <!-- Project 1 -->
+                            <div class="cyber-card">
+                                <div class="card-img">
+                                    <img src="./assets/NLmodel.jpg" alt="T-CLM2">
+                                    <div class="overlay"></div>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-meta">
+                                        <span class="tag">PYTORCH</span>
+                                        <span class="tag">TRANSFORMER</span>
+                                    </div>
+                                    <h4>T-CLM2</h4>
+                                    <p>Engineered a 275M-parameter decoder-only Transformer from scratch. Exported to Hugging Face with Safetensors integration.</p>
+                                    <a href="https://huggingface.co/Mayura01/T-CLM2" target="_blank" class="link-btn">ACCESS_DATA ></a>
+                                </div>
+                            </div>
+
+                            <!-- Project 2 -->
+                            <div class="cyber-card">
+                                <div class="card-img">
+                                    <img src="./assets/image0.jpg" alt="Omniera">
+                                    <div class="overlay"></div>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-meta">
+                                        <span class="tag">FULLSTACK</span>
+                                        <span class="tag">AI</span>
+                                    </div>
+                                    <h4>OMNIERA</h4>
+                                    <p>AI-powered chat app with a finetuned custom Transformer model. Built with Node.js, Express, MongoDB, and Python.</p>
+                                    <a href="https://github.com/MayuraPatkar/Omniera" target="_blank" class="link-btn">ACCESS_DATA ></a>
+                                </div>
+                            </div>
+
+                            <!-- Project 3 -->
+                            <div class="cyber-card">
+                                <div class="card-img">
+                                    <img src="./assets/SSMS_logo.png" alt="Shresht Systems">
+                                    <div class="overlay"></div>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-meta">
+                                        <span class="tag">ELECTRON</span>
+                                        <span class="tag">MONGODB</span>
+                                    </div>
+                                    <h4>SHRESHT SYSTEMS</h4>
+                                    <p>Desktop-based management system. Reduced paperwork by 80% with offline capabilities and seamless data sync.</p>
+                                    <a href="https://github.com/MayuraPatkar/Shresht-Systems_Management-System.git" target="_blank" class="link-btn">ACCESS_DATA ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SKILLS SECTION -->
+                <section id="skills" class="section">
+                    <div class="panel">
+                        <div class="panel-header">
+                            <h3>// SKILL_MATRIX</h3>
+                            <div class="dec-line"></div>
+                        </div>
+                        <div class="skills-wrapper">
+                            <div class="skill-col">
+                                <h4><i class="fas fa-code"></i> LANGUAGES</h4>
+                                <ul class="tech-list">
+                                    <li><span>Python (Advanced)</span> <div class="lvl" style="width:95%"></div></li>
+                                    <li><span>C/C++</span> <div class="lvl" style="width:85%"></div></li>
+                                    <li><span>JavaScript</span> <div class="lvl" style="width:80%"></div></li>
+                                    <li><span>SQL</span> <div class="lvl" style="width:85%"></div></li>
+                                </ul>
+                            </div>
+                            <div class="skill-col">
+                                <h4><i class="fas fa-brain"></i> DATA SCIENCE & ML</h4>
+                                <ul class="tech-list">
+                                    <li><span>PyTorch / Transformers</span> <div class="lvl" style="width:90%"></div></li>
+                                    <li><span>Scikit-learn</span> <div class="lvl" style="width:85%"></div></li>
+                                    <li><span>Pandas / NumPy</span> <div class="lvl" style="width:95%"></div></li>
+                                    <li><span>Matplotlib</span> <div class="lvl" style="width:80%"></div></li>
+                                </ul>
+                            </div>
+                            <div class="skill-col">
+                                <h4><i class="fas fa-tools"></i> FRAMEWORKS & TOOLS</h4>
+                                <ul class="tech-list">
+                                    <li><span>Node.js / Express</span> <div class="lvl" style="width:85%"></div></li>
+                                    <li><span>MongoDB</span> <div class="lvl" style="width:80%"></div></li>
+                                    <li><span>Git / GitHub</span> <div class="lvl" style="width:90%"></div></li>
+                                    <li><span>Jupyter / VS Code</span> <div class="lvl" style="width:95%"></div></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- EDUCATION SECTION -->
+                <section id="experience" class="section">
+                    <div class="panel">
+                        <div class="panel-header">
+                            <h3>// ACADEMIC_LOGS</h3>
+                            <div class="dec-line"></div>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="time-marker"></div>
+                                <div class="time-content">
+                                    <div class="time-date">EXPECTED 2026</div>
+                                    <h4 class="time-title">MASTER OF COMPUTER APPLICATIONS</h4>
+                                    <div class="time-org">MANIPAL INSTITUTE OF TECHNOLOGY, MANIPAL</div>
+                                    <p class="time-desc">
+                                        > CGPA: 7.68<br>
+                                        > Specialization in Artificial Intelligence & Machine Learning.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="time-marker"></div>
+                                <div class="time-content">
+                                    <div class="time-date">GRADUATED 2024</div>
+                                    <h4 class="time-title">BACHELORS OF COMPUTER APPLICATIONS</h4>
+                                    <div class="time-org">MANGALURU UNIVERSITY, KARNATAKA</div>
+                                    <p class="time-desc">
+                                        > CGPA: 8.7<br>
+                                        > Graduated with Distinction.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CERTIFICATIONS SECTION -->
+                <section id="certs" class="section">
+                    <div class="panel">
+                        <div class="panel-header">
+                            <h3>// INSTALLED_MODULES</h3>
+                            <div class="dec-line"></div>
+                        </div>
+                        <div class="certs-grid">
+                            <div class="cert-chip">
+                                <div class="chip-icon"><i class="fas fa-certificate"></i></div>
+                                <div class="chip-info">
+                                    <h4>TENSORFLOW_DEV</h4>
+                                    <span>Google Certificate</span>
+                                </div>
+                                <div class="chip-status">VERIFIED</div>
+                            </div>
+                            <div class="cert-chip">
+                                <div class="chip-icon"><i class="fas fa-cloud"></i></div>
+                                <div class="chip-info">
+                                    <h4>AWS_ML_SPECIALTY</h4>
+                                    <span>Amazon Web Services</span>
+                                </div>
+                                <div class="chip-status">VERIFIED</div>
+                            </div>
+                            <div class="cert-chip">
+                                <div class="chip-icon"><i class="fas fa-brain"></i></div>
+                                <div class="chip-info">
+                                    <h4>DEEP_LEARNING_SPEC</h4>
+                                    <span>Coursera / DeepLearning.AI</span>
+                                </div>
+                                <div class="chip-status">VERIFIED</div>
+                            </div>
+                            <div class="cert-chip">
+                                <div class="chip-icon"><i class="fas fa-code"></i></div>
+                                <div class="chip-info">
+                                    <h4>HACKATHON_WINNER</h4>
+                                    <span>Smart India Hackathon 2023</span>
+                                </div>
+                                <div class="chip-status">AWARDED</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CONTACT SECTION -->
+                <section id="contact" class="section">
+                    <div class="panel center-panel">
+                        <div class="panel-header">
+                            <h3>// ESTABLISH_COMMS</h3>
+                            <div class="dec-line"></div>
+                        </div>
+                        <div class="contact-body">
+                            <p class="transmission">
+                                > INCOMING TRANSMISSION...<br>
+                                > CHANNEL OPEN.<br>
+                                > READY TO COLLABORATE ON NEXT-GEN AI PROJECTS.
+                            </p>
+                            
+                            <div class="cta-group" style="margin-bottom: 30px;">
+                                <a href="mailto:mayurpatkar68@gmail.com" class="cyber-btn">
+                                    <i class="fas fa-envelope"></i> SEND_EMAIL
+                                </a>
+                                <a href="tel:+916366161681" class="cyber-btn outline">
+                                    <i class="fas fa-phone"></i> CALL_ME
+                                </a>
+                            </div>
+
+                            <div class="social-grid">
+                                <a href="https://github.com/mayurapatkar" target="_blank" class="social-box">
+                                    <i class="fab fa-github"></i>
+                                    <span>GITHUB</span>
+                                </a>
+                                <a href="https://linkedin.com/in/mayura-patkar" target="_blank" class="social-box">
+                                    <i class="fab fa-linkedin"></i>
+                                    <span>LINKEDIN</span>
+                                </a>
+                                <a href="https://x.com/mayurapatkar" target="_blank" class="social-box">
+                                    <i class="fab fa-x-twitter"></i>
+                                    <span>TWITTER</span>
+                                </a>
+                                <a href="https://huggingface.co/Mayura01" target="_blank" class="social-box">
+                                    <i class="fas fa-robot"></i>
+                                    <span>HUGGINGFACE</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
         </div>
-    </section>
-    <section id="contact">
-        <h1 class="title">Contact Me</h1>
-        <div class="contact-info-upper-container">
-            <div class="contact-info-container">
-                <img src="./assets/mail.png" alt="Email icon" class="icon contact-icon email-icon email-dark-mode" />
-                <p><a href="mailto:mayurpatkar68@gmail.com">mayurpatkar68@gmail.com</a></p>
-            </div>
-            <div class="contact-info-container">
-                <img src="./assets/in1.png" alt="LinkedIn icon" class="icon contact-icon linkedin2-dark-mode" />
-                <p><a href="https://www.linkedin.com/in/mayura-patkar-14306a2b1/">LinkedIn</a></p>
-            </div>
-            <div class="contact-info-container">
-                <img src="./assets/X1.png" alt="LinkedIn icon" class="icon contact-icon x-dark-mode" />
-                <p><a href="https://x.com/mayurapatkar?t=x81TllvAZ9pmkAUm9z53ag&s=08">X</a></p>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <nav>
-            <div class="nav-links-container">
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-        <p>Copyright &#169; 2024 Mayura. All Rights Reserved.</p>
-    </footer>
+    </div>
+
+    <script src="./script.js"></script>
 </body>
-<script src="./script.js"></script>
-
 </html>
