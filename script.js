@@ -78,17 +78,34 @@ function initNavigation() {
 
             // Special handling for Skills section to re-trigger animations
             if (targetId === 'skills') {
-                const bars = targetSection.querySelectorAll('.lvl');
-                bars.forEach(bar => {
-                    const width = bar.style.width;
-                    bar.style.width = '0';
+                const hexItems = targetSection.querySelectorAll('.hex-item');
+                hexItems.forEach((hex, index) => {
+                    hex.style.opacity = '0';
+                    hex.style.transform = 'translateY(20px)';
                     setTimeout(() => {
-                        bar.style.width = width;
-                    }, 50);
+                        hex.style.transition = 'all 0.5s ease';
+                        hex.style.opacity = '1';
+                        hex.style.transform = 'translateY(0)';
+                        // Re-enable float animation after entrance
+                        setTimeout(() => {
+                            hex.style.transition = '';
+                            hex.style.animation = `floatHex ${3 + Math.random()}s ease-in-out infinite`;
+                        }, 500);
+                    }, index * 100);
                 });
             }
         });
     });
+
+    // Handle "Initialize Projects" button
+    const initBtn = document.querySelector('a[href="#work"]');
+    if (initBtn) {
+        initBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const workBtn = document.querySelector('.nav-btn[data-target="work"]');
+            if (workBtn) workBtn.click();
+        });
+    }
 }
 
 /* === TYPEWRITER EFFECT === */
